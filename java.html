@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+//overloading in Java
+import java.util.*;
+import java.util.List;
+
+class DisplayOverloading
+{
+    public void disp(String c)
+    {
+         System.out.println(c);
+    }
+    public void disp(int c)
+    {
+         System.out.println(c);
+    }
+    public void disp(String c, double num)  
+    {
+         System.out.println(c + " double has a decimal,like:   "+num);
+    }
+    public void disp(String c, int num)  
+    {
+         System.out.println(c + "n int has no decimal, like:  "+num);
+    }
+}
+
+
+
+
+
+class Main
+{
+   public static void main(String args[])
+   {
+       DisplayOverloading obj = new DisplayOverloading();
+       obj.disp("a");
+       obj.disp(100);
+       obj.disp("a",100.100);
+       // without Generics
+List blist = new ArrayList();
+blist.add("hello");
+
+// With Generics
+List<Integer> alist = new ArrayList<Integer>();
+//alist.add("hello"); // will not compile
+   }
+}
