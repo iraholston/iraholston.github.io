@@ -1,13 +1,18 @@
-ol{
-  background-color: pink;
-}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   background-color: lightgreen;
 }
-
-li {
-  display: inline;
+ol{
+    /*display: inline;*/
+  background-color: green;
+}
+ul li{
+    display: inline;
+  background-color: green;
+}
+.active {
+    background-color: #4CAF50;
+    color: white;
 }
