@@ -4,10 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
+  <style>
+    h1 {
+    text-align: center;
+    }
+    #guess_status{
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+    }
+      #guess_display {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+    #guess_letters_display {
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+}
+    form {
+    text-align: center;
+    
+    color: #4CAF50;
+}
+  </style>
 </head>
 <body>
-
-  <div id="guess_display"></div>
+  <h1>Word Guess Game</h1><br>
+  <div id="guess_display"></div><br>
   
   
   <form id="guess_form">
@@ -63,14 +88,16 @@
   
     
   var displayGuessedWord = function() {
-    guessDisplay.innerHTML = "Current correct: " +guessedWord.join(" ");
+    guessDisplay.innerHTML = "Current correct: "
+      +"<br>" +guessedWord.join(" ");
     //console.log(guessedWord);
     
   };
   
   var displayGuessedLetters = function() {
     //console.log(guessedLetters);
-    guessLettersDisplay.innerHTML = "Letters guessed: " + guessedLetters;
+    guessLettersDisplay.innerHTML = "Letters guessed: " 
+      +"<br>" +guessedLetters;
     
   };
   
@@ -85,7 +112,8 @@
       //displayGuessedLetters();
     }
     if (hasWon()) {
-      guessStatus.innerHTML = "WINNER WINNER! Found them all! WOOOHOOO!";
+      guessStatus.innerHTML = "WINNER WINNER!"
+        +"<br>" + "Found them all!"+"<br>" + "WOOOHOOO!";
     }
     displayGuessedWord();
     displayGuessedLetters();
