@@ -10,7 +10,7 @@ ol{
 }
 ul li{
     display: inline;
-  background-color: green;
+  background-color: lime;
 }
 .active {
     background-color: #4CAF50;
