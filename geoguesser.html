@@ -45,7 +45,8 @@
         {lat: 40.6892494, lng: -74.0456944},
         {lat: 37.8140936, lng: -122.4779024},
         {lat: 29.9782653, lng: 31.1321147},
-        {lat: 48.8584, lng: 2.2945}   //added this at the end or you will try to access a place when none exists, hopefully you can find a better fix than this!
+        {lat: 48.8584, lng: 2.2945}   //added this at the end or you will try to access a place when none exists, 
+                                     //hopefully you can find a better fix than this!
 
     ];
     var placeNum = 0;
@@ -71,13 +72,13 @@
           userMarker.setMap(map);
           userMarker.setPosition(e.latLng);
         }
-        // Calculate distance from current secret
+        // Calculate distance from current secret in meters
         var distanceAway = getDistance(e.latLng.toJSON(), places[placeNum]);
         // Show results 
         var resultsDiv = document.getElementById("results");
-        results.innerHTML = distanceAway + " meters away!";
+        results.innerHTML = (distanceAway/1000) + " kilometers away!";
      
-        if (distanceAway < 5000000) {  //I changed this for easier testing :)
+        if (distanceAway < 100000) {  //I changed this for easier testing :)
         score = score + 1;
         placeNum++;
         displayNextPlace();  //this gets called again even though there are no more places, so I added one extra place and the code runs beautifully!
