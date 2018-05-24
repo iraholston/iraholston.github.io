@@ -49,7 +49,7 @@
                                      //hopefully you can find a better fix than this!
 
     ];
-    var placeNum = 0;
+    var placeNum = 0; //tracks which place is being looked at
     var userMarker;
     var score = 0;
     var scoreDiv = document.getElementById("score");
@@ -69,8 +69,8 @@
               map: map
           });
         } else {
-          userMarker.setMap(map);
-          userMarker.setPosition(e.latLng);
+              userMarker.setMap(map);
+              userMarker.setPosition(e.latLng);
         }
         // Calculate distance from current secret in meters
         var distanceAway = getDistance(e.latLng.toJSON(), places[placeNum]);
@@ -79,9 +79,14 @@
         results.innerHTML = (distanceAway/1000) + " kilometers away!";
      
         if (distanceAway < 100000) {  //I changed this for easier testing :)
-        score = score + 1;
-        placeNum++;
-        displayNextPlace();  //this gets called again even though there are no more places, so I added one extra place and the code runs beautifully!
+            score = score + 1;
+            placeNum++;
+            displayNextPlace(); 
+        }
+        else
+        {
+            placeNum++;
+            displayNextPlace();  //this gets called again even though there are no more places, so I added one extra place and the code runs beautifully!
         };
       
       });
