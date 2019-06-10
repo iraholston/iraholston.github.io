@@ -5,7 +5,10 @@ html, body {
 canvas {
   display: block;
 }
-
+h3 {
+    text-align: left;
+    background-color: lightgreen;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -13,7 +16,13 @@ ul {
   overflow: hidden;
   background-color: #333;
 }
+ol{
 
+    margin: 0;
+    padding: 0;
+
+
+}
 li {
   float: left;
 }
